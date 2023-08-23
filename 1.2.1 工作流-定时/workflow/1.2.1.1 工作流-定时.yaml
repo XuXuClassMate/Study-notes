@@ -1,0 +1,37 @@
+workflowName: "1.2.1.1 工作流-定时"
+desc: ""
+tenantName: null
+timeoutMin: null
+executionStrategy: "PARALLEL"
+globalParams: "[]"
+labelNames: []
+cardName: null
+timingName: "1.2.1.1 工作流-定时"
+failureStrategy: "CONTINUE"
+warningType: "NONE"
+processInstancePriority: "MEDIUM"
+workerGroupName: "default"
+envName: null
+alertGroupName: null
+estimatedEndTime: null
+taskGitInfoList:
+- taskName: "1.2.1.1 工作流-定时"
+  taskType: "SHELL"
+  taskParams: "{\"localParams\":[],\"rawScript\":\"echo \\\"每分钟定时\\\"\\n\",\"resourceList\"\
+    :[]}"
+  resourceFiles: null
+  description: ""
+  taskPriority: "MEDIUM"
+  failRetryTimes: 0
+  failRetryInterval: 1
+  timeout: 0
+  timeoutNotifyStrategy: null
+  delayTime: 0
+  locationX: null
+  locationY: null
+  workerGroup: "default"
+  env: null
+  taskGroup: null
+  taskGroupPriority: null
+  localParams: null
+  preTasks: []

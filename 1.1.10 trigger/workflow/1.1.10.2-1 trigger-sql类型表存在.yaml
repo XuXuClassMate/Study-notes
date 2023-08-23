@@ -1,0 +1,38 @@
+workflowName: "1.1.10.2-1 trigger-sql类型表存在"
+desc: ""
+tenantName: null
+timeoutMin: null
+executionStrategy: "PARALLEL"
+globalParams: "[]"
+labelNames: []
+cardName: null
+timingName: null
+failureStrategy: null
+warningType: null
+processInstancePriority: null
+workerGroupName: null
+envName: null
+alertGroupName: null
+estimatedEndTime: null
+taskGitInfoList:
+- taskName: "1.1.10.2-1 trigger-sql类型表存在"
+  taskType: "SURVEIL"
+  taskParams: "{\"localParams\":[],\"resourceList\":[],\"interval\":60,\"scanType\"\
+    :2,\"type\":\"JDBC-Mysql\",\"datasource\":10647181688064,\"sql\":\"select * from\
+    \ t_ds_version\",\"sqlType\":\"2\"}"
+  resourceFiles: null
+  description: ""
+  taskPriority: "MEDIUM"
+  failRetryTimes: 0
+  failRetryInterval: 1
+  timeout: 0
+  timeoutNotifyStrategy: null
+  delayTime: 0
+  locationX: null
+  locationY: null
+  workerGroup: "default"
+  env: null
+  taskGroup: null
+  taskGroupPriority: null
+  localParams: null
+  preTasks: []

@@ -1,0 +1,38 @@
+workflowName: "16-工作流-http"
+desc: ""
+tenantName: null
+timeoutMin: null
+executionStrategy: "PARALLEL"
+globalParams: "[]"
+labelNames: []
+cardName: null
+timingName: null
+failureStrategy: null
+warningType: null
+processInstancePriority: null
+workerGroupName: null
+envName: null
+alertGroupName: null
+estimatedEndTime: null
+taskGitInfoList:
+- taskName: "http"
+  taskType: "HTTP"
+  taskParams: "{\"localParams\":[],\"resourceList\":[],\"httpMethod\":\"GET\",\"httpCheckCondition\"\
+    :\"STATUS_CODE_DEFAULT\",\"httpParams\":[],\"url\":\"http://8.130.104.195:12345/dolphinscheduler/ui/profile\"\
+    ,\"condition\":\"200\",\"connectTimeout\":60000,\"socketTimeout\":60000}"
+  resourceFiles: null
+  description: ""
+  taskPriority: "MEDIUM"
+  failRetryTimes: 0
+  failRetryInterval: 1
+  timeout: 0
+  timeoutNotifyStrategy: null
+  delayTime: 0
+  locationX: null
+  locationY: null
+  workerGroup: "default"
+  env: null
+  taskGroup: null
+  taskGroupPriority: null
+  localParams: null
+  preTasks: []

@@ -1,0 +1,44 @@
+workflowName: "1.5.1.10 表行"
+desc: ""
+tenantName: null
+timeoutMin: null
+executionStrategy: "PARALLEL"
+globalParams: "[]"
+labelNames: []
+cardName: null
+timingName: null
+failureStrategy: null
+warningType: null
+processInstancePriority: null
+workerGroupName: null
+envName: null
+alertGroupName: null
+estimatedEndTime: null
+taskGitInfoList:
+- taskName: "1.5.1.10 表行"
+  taskType: "DATA_QUALITY"
+  taskParams: "{\"localParams\":[],\"resourceList\":[],\"ruleId\":10,\"ruleInputParameter\"\
+    :{\"check_type\":\"1\",\"comparison_type\":\"1\",\"comparison_name\":0,\"failure_strategy\"\
+    :\"0\",\"operator\":\"4\",\"src_connector_type\":\"JDBC-Mysql\",\"src_datasource_id\"\
+    :\"10647338171904\",\"src_database\":\"testdata\",\"src_filter\":\"id>1\",\"src_field\"\
+    :null,\"src_table\":\"test_data_quality\",\"threshold\":\"8\"},\"sparkParameters\"\
+    :{\"deployMode\":\"local\",\"driverCores\":1,\"driverMemory\":\"512M\",\"executorCores\"\
+    :2,\"executorMemory\":\"2G\",\"numExecutors\":2,\"others\":\"--conf spark.yarn.maxAppAttempts=1\
+    \ --class org.apache.dolphinscheduler.data.quality.DataQualityApplication\"},\"\
+    ideContentField\":{\"resourceId\":null,\"field\":null}}"
+  resourceFiles: null
+  description: ""
+  taskPriority: "MEDIUM"
+  failRetryTimes: 0
+  failRetryInterval: 1
+  timeout: 0
+  timeoutNotifyStrategy: null
+  delayTime: 0
+  locationX: null
+  locationY: null
+  workerGroup: "default"
+  env: "1.5 数据质量"
+  taskGroup: null
+  taskGroupPriority: null
+  localParams: null
+  preTasks: []

@@ -1,0 +1,217 @@
+workflowName: "1.2.8.3 task 任务优先级"
+desc: ""
+tenantName: null
+timeoutMin: null
+executionStrategy: "PARALLEL"
+globalParams: "[]"
+labelNames: []
+cardName: null
+timingName: null
+failureStrategy: null
+warningType: null
+processInstancePriority: null
+workerGroupName: null
+envName: null
+alertGroupName: null
+estimatedEndTime: null
+taskGitInfoList:
+- taskName: "shell1-low"
+  taskType: "SHELL"
+  taskParams: "{\"localParams\":[],\"rawScript\":\"sleep 100\\necho \\\"shell1 done\\\
+    \"\",\"resourceList\":[]}"
+  resourceFiles: null
+  description: ""
+  taskPriority: "HIGHEST"
+  failRetryTimes: 0
+  failRetryInterval: 1
+  timeout: 0
+  timeoutNotifyStrategy: null
+  delayTime: 0
+  locationX: null
+  locationY: null
+  workerGroup: "default"
+  env: null
+  taskGroup: null
+  taskGroupPriority: null
+  localParams: null
+  preTasks: []
+- taskName: "shell2-low"
+  taskType: "SHELL"
+  taskParams: "{\"localParams\":[],\"rawScript\":\"sleep 200\\necho \\\"shell2 done\\\
+    \"\",\"resourceList\":[]}"
+  resourceFiles: null
+  description: ""
+  taskPriority: "LOWEST"
+  failRetryTimes: 0
+  failRetryInterval: 1
+  timeout: 0
+  timeoutNotifyStrategy: null
+  delayTime: 0
+  locationX: null
+  locationY: null
+  workerGroup: "default"
+  env: null
+  taskGroup: null
+  taskGroupPriority: null
+  localParams: null
+  preTasks: []
+- taskName: "shell3-high"
+  taskType: "SHELL"
+  taskParams: "{\"localParams\":[],\"rawScript\":\"sleep 20\\necho \\\"shell2 done\\\
+    \"\",\"resourceList\":[]}"
+  resourceFiles: null
+  description: ""
+  taskPriority: "LOWEST"
+  failRetryTimes: 0
+  failRetryInterval: 1
+  timeout: 0
+  timeoutNotifyStrategy: null
+  delayTime: 0
+  locationX: null
+  locationY: null
+  workerGroup: "default"
+  env: null
+  taskGroup: null
+  taskGroupPriority: null
+  localParams: null
+  preTasks: []
+- taskName: "shell4-low"
+  taskType: "SHELL"
+  taskParams: "{\"localParams\":[],\"rawScript\":\"sleep 200\\necho \\\"shell4 done\\\
+    \"\",\"resourceList\":[]}"
+  resourceFiles: null
+  description: ""
+  taskPriority: "LOWEST"
+  failRetryTimes: 0
+  failRetryInterval: 1
+  timeout: 0
+  timeoutNotifyStrategy: null
+  delayTime: 0
+  locationX: null
+  locationY: null
+  workerGroup: "default"
+  env: null
+  taskGroup: null
+  taskGroupPriority: null
+  localParams: null
+  preTasks: []
+- taskName: "shell5-low"
+  taskType: "SHELL"
+  taskParams: "{\"localParams\":[],\"rawScript\":\"sleep 200\\necho \\\"shell5 done\\\
+    \"\",\"resourceList\":[]}"
+  resourceFiles: null
+  description: ""
+  taskPriority: "LOWEST"
+  failRetryTimes: 0
+  failRetryInterval: 1
+  timeout: 0
+  timeoutNotifyStrategy: null
+  delayTime: 0
+  locationX: null
+  locationY: null
+  workerGroup: "default"
+  env: null
+  taskGroup: null
+  taskGroupPriority: null
+  localParams: null
+  preTasks: []
+- taskName: "shell6-low"
+  taskType: "SHELL"
+  taskParams: "{\"localParams\":[],\"rawScript\":\"sleep 200\\necho \\\"shell6 done\\\
+    \"\",\"resourceList\":[]}"
+  resourceFiles: null
+  description: ""
+  taskPriority: "LOWEST"
+  failRetryTimes: 0
+  failRetryInterval: 1
+  timeout: 0
+  timeoutNotifyStrategy: null
+  delayTime: 0
+  locationX: null
+  locationY: null
+  workerGroup: "default"
+  env: null
+  taskGroup: null
+  taskGroupPriority: null
+  localParams: null
+  preTasks: []
+- taskName: "shell7-low"
+  taskType: "SHELL"
+  taskParams: "{\"localParams\":[],\"rawScript\":\"sleep 200\\necho \\\"shell7 done\\\
+    \"\",\"resourceList\":[]}"
+  resourceFiles: null
+  description: ""
+  taskPriority: "LOWEST"
+  failRetryTimes: 0
+  failRetryInterval: 1
+  timeout: 0
+  timeoutNotifyStrategy: null
+  delayTime: 0
+  locationX: null
+  locationY: null
+  workerGroup: "default"
+  env: null
+  taskGroup: null
+  taskGroupPriority: null
+  localParams: null
+  preTasks: []
+- taskName: "shell8-low"
+  taskType: "SHELL"
+  taskParams: "{\"localParams\":[],\"rawScript\":\"sleep 200\\necho \\\"shell8 done\\\
+    \"\",\"resourceList\":[]}"
+  resourceFiles: null
+  description: ""
+  taskPriority: "LOWEST"
+  failRetryTimes: 0
+  failRetryInterval: 1
+  timeout: 0
+  timeoutNotifyStrategy: null
+  delayTime: 0
+  locationX: null
+  locationY: null
+  workerGroup: "default"
+  env: null
+  taskGroup: null
+  taskGroupPriority: null
+  localParams: null
+  preTasks: []
+- taskName: "shell9-high"
+  taskType: "SHELL"
+  taskParams: "{\"localParams\":[],\"rawScript\":\"sleep 200\\necho \\\"shell9 done\\\
+    \"\",\"resourceList\":[]}"
+  resourceFiles: null
+  description: ""
+  taskPriority: "HIGHEST"
+  failRetryTimes: 0
+  failRetryInterval: 1
+  timeout: 0
+  timeoutNotifyStrategy: null
+  delayTime: 0
+  locationX: null
+  locationY: null
+  workerGroup: "default"
+  env: null
+  taskGroup: null
+  taskGroupPriority: null
+  localParams: null
+  preTasks: []
+- taskName: "shell3-low"
+  taskType: "SHELL"
+  taskParams: "{\"localParams\":[],\"rawScript\":\"sleep 200\\necho \\\"shell3 done\\\
+    \"\",\"resourceList\":[]}"
+  resourceFiles: null
+  description: ""
+  taskPriority: "LOWEST"
+  failRetryTimes: 0
+  failRetryInterval: 1
+  timeout: 0
+  timeoutNotifyStrategy: null
+  delayTime: 0
+  locationX: null
+  locationY: null
+  workerGroup: "default"
+  env: null
+  taskGroup: null
+  taskGroupPriority: null
+  localParams: null
+  preTasks: []
