@@ -21,7 +21,7 @@ taskGitInfoList:
     :[]}"
   resourceFiles: null
   description: ""
-  taskPriority: null
+  taskPriority: "MEDIUM"
   failRetryTimes: 0
   failRetryInterval: 1
   timeout: 0
