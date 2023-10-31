@@ -1,0 +1,159 @@
+workflowName: "复杂工作流"
+desc: ""
+tenantName: null
+timeoutMin: null
+executionStrategy: "PARALLEL"
+globalParams: "[]"
+labelNames: []
+cardName: null
+timingName: null
+failureStrategy: null
+warningType: null
+processInstancePriority: null
+workerGroupName: null
+envName: null
+alertGroupName: null
+estimatedEndTime: null
+taskGitInfoList:
+- taskName: "shell-开始"
+  taskType: "SHELL"
+  taskParams: "{\"localParams\":[],\"rawScript\":\"echo \\\"开始执行\\\"\",\"resourceList\"\
+    :[],\"fieldStr\":\"rawScript\",\"dataSourceList\":[],\"ideContentField\":{\"resourceId\"\
+    :null,\"field\":\"rawScript\"}}"
+  resourceFiles: null
+  description: ""
+  taskPriority: "MEDIUM"
+  failRetryTimes: 0
+  failRetryInterval: 1
+  timeout: 0
+  timeoutNotifyStrategy: null
+  delayTime: 0
+  locationX: null
+  locationY: null
+  workerGroup: "default"
+  env: "spark"
+  taskGroup: null
+  taskGroupPriority: null
+  localParams: null
+  preTasks: []
+- taskName: "dependent"
+  taskType: "DEPENDENT"
+  taskParams: "{\"localParams\":[],\"resourceList\":[],\"dependence\":{\"relation\"\
+    :\"AND\",\"dependTaskList\":[{\"dependItemList\":[{\"projectCode\":11397866960672,\"\
+    definitionCode\":11411888318883,\"depTaskCodes\":[11411888318880],\"timeType\"\
+    :\"NATURAL\",\"cycle\":\"day\",\"dateValue\":\"today\",\"state\":null,\"projectCodeOptions\"\
+    :[{\"value\":11397866960672,\"label\":\"flink\"}]}],\"relation\":\"AND\"}]},\"\
+    otherParams\":{\"dependStrategy\":\"failure-continue\"},\"ideContentField\":{\"\
+    resourceId\":null,\"field\":null}}"
+  resourceFiles: null
+  description: ""
+  taskPriority: "MEDIUM"
+  failRetryTimes: 0
+  failRetryInterval: 1
+  timeout: 0
+  timeoutNotifyStrategy: null
+  delayTime: 0
+  locationX: null
+  locationY: null
+  workerGroup: null
+  env: null
+  taskGroup: null
+  taskGroupPriority: null
+  localParams: null
+  preTasks:
+  - "shell-开始"
+- taskName: "DQ"
+  taskType: "DATA_QUALITY"
+  taskParams: "{\"localParams\":[],\"resourceList\":[],\"ruleId\":10,\"ruleInputParameter\"\
+    :{\"check_type\":\"1\",\"comparison_type\":\"1\",\"comparison_name\":3,\"failure_strategy\"\
+    :\"0\",\"operator\":\"3\",\"src_connector_type\":\"JDBC-Mysql\",\"src_datasource_id\"\
+    :\"11410419218976\",\"src_database\":\"whalescheduler\",\"src_field\":null,\"\
+    src_table\":\"t_ds_process_instance\",\"threshold\":\"3\"},\"sparkParameters\"\
+    :{\"deployMode\":\"local\",\"driverCores\":1,\"driverMemory\":\"512M\",\"executorCores\"\
+    :2,\"executorMemory\":\"2G\",\"numExecutors\":2,\"others\":\"--conf spark.yarn.maxAppAttempts=1\
+    \ --class org.apache.dolphinscheduler.data.quality.DataQualityApplication\"},\"\
+    ideContentField\":{\"resourceId\":null,\"field\":null}}"
+  resourceFiles: null
+  description: ""
+  taskPriority: "MEDIUM"
+  failRetryTimes: 0
+  failRetryInterval: 1
+  timeout: 0
+  timeoutNotifyStrategy: null
+  delayTime: 0
+  locationX: null
+  locationY: null
+  workerGroup: "default"
+  env: "spark"
+  taskGroup: null
+  taskGroupPriority: null
+  localParams: null
+  preTasks:
+  - "dependent"
+- taskName: "分支2"
+  taskType: "SHELL"
+  taskParams: "{\"localParams\":[],\"rawScript\":\"echo \\\"结束\\\"\",\"resourceList\"\
+    :[],\"fieldStr\":\"rawScript\",\"dataSourceList\":[],\"ideContentField\":{\"resourceId\"\
+    :null,\"field\":\"rawScript\"}}"
+  resourceFiles: null
+  description: ""
+  taskPriority: "MEDIUM"
+  failRetryTimes: 0
+  failRetryInterval: 1
+  timeout: 0
+  timeoutNotifyStrategy: null
+  delayTime: 0
+  locationX: null
+  locationY: null
+  workerGroup: "default"
+  env: null
+  taskGroup: null
+  taskGroupPriority: null
+  localParams: null
+  preTasks:
+  - "DQ"
+- taskName: "分支1"
+  taskType: "SHELL"
+  taskParams: "{\"localParams\":[],\"rawScript\":\"echo \\\"分支1\\\"\",\"resourceList\"\
+    :[],\"fieldStr\":\"rawScript\",\"dataSourceList\":[],\"ideContentField\":{\"resourceId\"\
+    :null,\"field\":\"rawScript\"}}"
+  resourceFiles: null
+  description: ""
+  taskPriority: "MEDIUM"
+  failRetryTimes: 0
+  failRetryInterval: 1
+  timeout: 0
+  timeoutNotifyStrategy: null
+  delayTime: 0
+  locationX: null
+  locationY: null
+  workerGroup: "default"
+  env: null
+  taskGroup: null
+  taskGroupPriority: null
+  localParams: null
+  preTasks:
+  - "DQ"
+- taskName: "shell-结束"
+  taskType: "SHELL"
+  taskParams: "{\"localParams\":[],\"rawScript\":\"echo \\\"结束\\\"\",\"resourceList\"\
+    :[],\"fieldStr\":\"rawScript\",\"dataSourceList\":[],\"ideContentField\":{\"resourceId\"\
+    :null,\"field\":\"rawScript\"}}"
+  resourceFiles: null
+  description: ""
+  taskPriority: "MEDIUM"
+  failRetryTimes: 0
+  failRetryInterval: 1
+  timeout: 0
+  timeoutNotifyStrategy: null
+  delayTime: 0
+  locationX: null
+  locationY: null
+  workerGroup: "default"
+  env: null
+  taskGroup: null
+  taskGroupPriority: null
+  localParams: null
+  preTasks:
+  - "分支2"
+  - "分支1"
