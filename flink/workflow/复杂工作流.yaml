@@ -40,11 +40,11 @@ taskGitInfoList:
   taskType: "DEPENDENT"
   taskParams: "{\"localParams\":[],\"resourceList\":[],\"dependence\":{\"relation\"\
     :\"AND\",\"dependTaskList\":[{\"dependItemList\":[{\"projectCode\":11397866960672,\"\
-    definitionCode\":11411888318883,\"depTaskCodes\":[11411888318880],\"timeType\"\
+    definitionCode\":11430592061600,\"depTaskCodes\":[11430589705248],\"timeType\"\
     :\"NATURAL\",\"cycle\":\"day\",\"dateValue\":\"today\",\"state\":null,\"projectCodeOptions\"\
-    :[{\"value\":11397866960672,\"label\":\"flink\"}]}],\"relation\":\"AND\"}]},\"\
-    otherParams\":{\"dependStrategy\":\"failure-continue\"},\"ideContentField\":{\"\
-    resourceId\":null,\"field\":null}}"
+    :[{\"value\":11397866960672,\"label\":\"flink\"},{\"value\":11419954256928,\"\
+    label\":\"123\"}]}],\"relation\":\"AND\"}]},\"otherParams\":{\"dependStrategy\"\
+    :\"failure-continue\"},\"ideContentField\":{\"resourceId\":null,\"field\":null}}"
   resourceFiles: null
   description: ""
   taskPriority: "MEDIUM"

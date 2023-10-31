@@ -17,7 +17,7 @@ estimatedEndTime: null
 taskGitInfoList:
 - taskName: "123"
   taskType: "SHELL"
-  taskParams: "{\"localParams\":[],\"rawScript\":\"sleep 5\",\"resourceList\":[],\"\
+  taskParams: "{\"localParams\":[],\"rawScript\":\"echo 1\",\"resourceList\":[],\"\
     fieldStr\":\"rawScript\",\"dataSourceList\":[],\"ideContentField\":{\"resourceId\"\
     :null,\"field\":\"rawScript\"}}"
   resourceFiles: null
