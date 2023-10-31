@@ -17,8 +17,9 @@ estimatedEndTime: null
 taskGitInfoList:
 - taskName: "flink-stream_copy_20231029222732665"
   taskType: "FLINK_STREAM"
-  taskParams: "{\"localParams\":[],\"rawScript\":\"\",\"resourceList\":[],\"fieldStr\"\
-    :\"rawScript\",\"initScript\":\"\",\"programType\":\"JAVA\",\"mainClass\":\"org.apache.flink.streaming.examples.join.WindowJoin\"\
+  taskParams: "{\"localParams\":[],\"rawScript\":\"\",\"resourceList\":[{\"id\":4,\"\
+    resourceName\":null,\"res\":null}],\"fieldStr\":\"rawScript\",\"initScript\":\"\
+    \",\"programType\":\"JAVA\",\"mainClass\":\"org.apache.flink.streaming.examples.join.WindowJoin\"\
     ,\"mainJar\":{\"id\":4},\"deployMode\":\"local\",\"flinkVersion\":\"<1.10\",\"\
     jobManagerMemory\":\"1G\",\"taskManagerMemory\":\"2G\",\"slot\":1,\"taskManager\"\
     :2,\"parallelism\":1,\"ideContentField\":{\"resourceId\":null,\"field\":\"rawScript\"\

@@ -55,7 +55,7 @@ taskGitInfoList:
   delayTime: 0
   locationX: null
   locationY: null
-  workerGroup: null
+  workerGroup: "default"
   env: null
   taskGroup: null
   taskGroupPriority: null
