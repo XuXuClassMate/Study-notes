@@ -50,4 +50,74 @@ graph TD
     I --> J[发布正式 Release 版本]
     end
 ```
+##  AWS Architecture 
 
+```mermaid
+sequenceDiagram
+    autonumber
+    
+    %% Actors and Components
+    actor Customer as AWS Customer
+    participant AWS as AWS Marketplace
+    participant Nginx as Application Load Balancer / Nginx
+    participant SaaS_API as WhaleStudio SaaS Backend<br/>(FastAPI / Uvicorn)
+    participant UI as WhaleStudio Frontend
+    participant DB as MySQL Database
+    participant WhaleStudio as WhaleStudio Core Engine
+    participant Cron as Cron Jobs / Scheduler
+    
+    %% Flow 1: Subscription and Registration
+    rect rgb(240, 248, 255)
+        note right of Customer: 1. Subscription & Account Setup Flow
+        Customer->>AWS: 1. Subscribe to SaaS Product
+        AWS->>Customer: 2. Redirect to SaaS Registration URL<br/>(POST with x-amzn-marketplace-token)
+        Customer->>Nginx: 3. HTTPS Request to Registration URL
+        Nginx->>SaaS_API: 4. POST /marketplace/intake-aws
+        
+        SaaS_API->>AWS: 5. ResolveCustomer(Token)
+        AWS-->>SaaS_API: 6. Returns CustomerIdentifier, ProductCode, AWSAccountId
+        
+        alt Subscription Type
+            SaaS_API->>AWS: 7. GetEntitlements(CustomerIdentifier)
+            AWS-->>SaaS_API: 8. Returns Entitlement (Dimension, Expiration)
+        end
+        
+        SaaS_API->>DB: 9. Upsert Account (Status: ACTIVE/TRIAL)
+        SaaS_API-->>Nginx: 10. HTTP 302 Redirect to Frontend UI<br/>(/marketplace-intake?x-amzn-marketplace-token=account_id)
+        Nginx-->>Customer: 11. Redirect
+        
+        Customer->>UI: 12. Load Setup Page
+        UI->>SaaS_API: 13. POST /marketplace/intake (Check Status)
+        SaaS_API->>DB: 14. Query Account state
+        SaaS_API-->>UI: 15. Return status="new"
+        
+        Customer->>UI: 16. Submit Email
+        UI->>SaaS_API: 17. POST /registration/email
+        SaaS_API-->>Customer: 18. Send Verification Email
+        
+        Customer->>UI: 19. Complete Profile (Password, Name)
+        UI->>SaaS_API: 20. POST /registration/profile
+        SaaS_API->>WhaleStudio: 21. Provision User & Project (ensure_user/ensure_project)
+        WhaleStudio-->>SaaS_API: 22. Return Project ID
+        SaaS_API->>DB: 23. Update Account with Project ID
+        SaaS_API-->>UI: 24. Setup Complete
+    end
+    
+    %% Flow 2: Usage Metering and Billing
+    rect rgb(255, 245, 238)
+        note right of Customer: 2. Usage Reporting & Metering Flow
+        Customer->>WhaleStudio: 25. Use Product (Syncs/Workflows)
+        WhaleStudio->>SaaS_API: 26. POST /usage/events (Report raw usage)
+        SaaS_API->>DB: 27. Store raw usage events
+        
+        Cron->>SaaS_API: 28. Trigger Hourly Aggregation (cron)
+        SaaS_API->>DB: 29. Aggregate Usage & Calculate Cumulative
+        SaaS_API->>DB: 30. Generate MeteringReportOutbox records
+        
+        Cron->>SaaS_API: 31. Trigger Outbox Processor (cron)
+        SaaS_API->>DB: 32. Fetch pending Outbox records
+        SaaS_API->>AWS: 33. BatchMeterUsage(UsageRecords)
+        AWS-->>SaaS_API: 34. Returns Status (Success/Fail)
+        SaaS_API->>DB: 35. Update Outbox Status (Success/Retry)
+    end
+```
