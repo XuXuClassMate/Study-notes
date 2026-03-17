@@ -1,3 +1,54 @@
+## AWS - high lever architecher
+
+flowchart TD
+    %% External Entities
+    subgraph External[External Entities]
+        Customer[AWS Customer\nWeb Browser]
+        AWS[AWS Marketplace APIs\nMetering / Entitlements]
+        EmailProvider[Email / SMTP Service\nUser Verification]
+    end
+
+    %% Edge Proxy
+    Nginx[Nginx / Application Load Balancer\nReverse Proxy & TLS]
+
+    %% Internal SaaS Applications
+    subgraph SaaS_Backend[WhaleStudio SaaS Backend]
+        API_Layer[FastAPI App / Uvicorn\n(app/api.py)]
+        RegService[Registration Service\n(app/registration.py)]
+        UsageService[Usage & Billing Engine\n(app/usage.py)]
+        CronJobs[Cron Jobs / Scheduler\napscheduler]
+    end
+
+    %% Internal Data stores
+    subgraph DataStore[Data Layer]
+        MySQL[(MySQL Database\nAccounts / Usage Logs)]
+    end
+
+    %% Internal Core Engine
+    subgraph CoreEngine[Core Infrastructure]
+        WhaleStudio[WhaleStudio Core API\nProject & Execution Engine]
+    end
+
+    %% Connections
+    Customer -- HTTPS --> Nginx
+    Nginx -- HTTP Proxy --> API_Layer
+    
+    API_Layer --> RegService
+    API_Layer --> UsageService
+    
+    RegService -- Fetch / Store --> MySQL
+    RegService -- Validate / Resolve --> AWS
+    RegService -- Send Links --> EmailProvider
+    RegService -- Provision Tenant --> WhaleStudio
+    
+    UsageService -- Read Raw Events --> MySQL
+    WhaleStudio -- Report Execution --> UsageService
+    
+    %% Cron triggers
+    CronJobs -- Trigger Hourly Aggregation --> UsageService
+    CronJobs -- Trigger BatchMeterUsage --> UsageService
+    UsageService -- Submit Metering --> AWS
+
 ## 正常发版流程
 ```mermaid
 graph TD
