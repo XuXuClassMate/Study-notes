@@ -1,53 +1,52 @@
 ## AWS - high lever architecher
-
 flowchart TD
     %% External Entities
-    subgraph External[External Entities]
-        Customer[AWS Customer\nWeb Browser]
-        AWS[AWS Marketplace APIs\nMetering / Entitlements]
-        EmailProvider[Email / SMTP Service\nUser Verification]
+    subgraph External
+        Customer
+        AWS
+        EmailProvider
     end
 
     %% Edge Proxy
-    Nginx[Nginx / Application Load Balancer\nReverse Proxy & TLS]
+    Nginx
 
     %% Internal SaaS Applications
-    subgraph SaaS_Backend[WhaleStudio SaaS Backend]
-        API_Layer[FastAPI App / Uvicorn\n(app/api.py)]
-        RegService[Registration Service\n(app/registration.py)]
-        UsageService[Usage & Billing Engine\n(app/usage.py)]
-        CronJobs[Cron Jobs / Scheduler\napscheduler]
+    subgraph SaaS_Backend
+        API_Layer
+        RegService
+        UsageService
+        CronJobs
     end
 
     %% Internal Data stores
-    subgraph DataStore[Data Layer]
-        MySQL[(MySQL Database\nAccounts / Usage Logs)]
+    subgraph DataStore
+        MySQL
     end
 
     %% Internal Core Engine
-    subgraph CoreEngine[Core Infrastructure]
-        WhaleStudio[WhaleStudio Core API\nProject & Execution Engine]
+    subgraph CoreEngine
+        WhaleStudio
     end
 
     %% Connections
-    Customer -- HTTPS --> Nginx
-    Nginx -- HTTP Proxy --> API_Layer
+    Customer -->|s15| Nginx
+    Nginx -->|s16| API_Layer
     
     API_Layer --> RegService
     API_Layer --> UsageService
     
-    RegService -- Fetch / Store --> MySQL
-    RegService -- Validate / Resolve --> AWS
-    RegService -- Send Links --> EmailProvider
-    RegService -- Provision Tenant --> WhaleStudio
+    RegService -->|s17| MySQL
+    RegService -->|s18| AWS
+    RegService -->|s19| EmailProvider
+    RegService -->|s20| WhaleStudio
     
-    UsageService -- Read Raw Events --> MySQL
-    WhaleStudio -- Report Execution --> UsageService
+    UsageService -->|s21| MySQL
+    WhaleStudio -->|s22| UsageService
     
     %% Cron triggers
-    CronJobs -- Trigger Hourly Aggregation --> UsageService
-    CronJobs -- Trigger BatchMeterUsage --> UsageService
-    UsageService -- Submit Metering --> AWS
+    CronJobs -->|s23| UsageService
+    CronJobs -->|s24| UsageService
+    UsageService -->|s25| AWS
 
 ## 正常发版流程
 ```mermaid
