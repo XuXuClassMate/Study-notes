@@ -1,0 +1,51 @@
+[INFO] 2021-09-29 14:31:09.288 org.apache.dolphinscheduler.server.master.runner.MasterSchedulerService:[234] - find command 60470, slot:0 :
+[INFO] 2021-09-29 14:31:09.288 org.apache.dolphinscheduler.server.master.runner.MasterSchedulerService:[173] - find one command: id: 60470, type: START_PROCESS
+[INFO] 2021-09-29 14:31:09.299 org.apache.dolphinscheduler.server.master.runner.MasterSchedulerService:[194] - handle command cost: 11
+[INFO] 2021-09-29 14:31:09.299 org.apache.dolphinscheduler.server.master.runner.MasterSchedulerService:[196] - handle command end, command 60470 process 67698 start...
+[INFO] 2021-09-29 14:31:09.305 org.apache.dolphinscheduler.server.master.runner.MasterSchedulerService:[219] - find command page cost: 6
+[INFO] 2021-09-29 14:31:09.317 org.apache.dolphinscheduler.server.master.runner.WorkflowExecuteThread:[1118] - add task to stand by list: hello
+[INFO] 2021-09-29 14:31:09.320 org.apache.dolphinscheduler.service.process.ProcessService:[1123] - start submit task : hello, instance id:67698, state: RUNNING_EXECUTION
+[INFO] 2021-09-29 14:31:09.329 org.apache.dolphinscheduler.service.process.ProcessService:[1136] - end submit task to db successfully:67724 hello state:SUBMITTED_SUCCESS complete, instance id:67698 state: RUNNING_EXECUTION
+[INFO] 2021-09-29 14:31:09.329 org.apache.dolphinscheduler.server.master.runner.task.CommonTaskProcessor:[122] - task ready to submit: TaskInstance{id=67724, name='hello', taskType='SHELL', processInstanceId=67698, processInstanceName='null', state=SUBMITTED_SUCCESS, firstSubmitTime=Wed Sep 29 14:31:09 CST 2021, submitTime=Wed Sep 29 14:31:09 CST 2021, startTime=null, endTime=null, host='null', executePath='null', logPath='null', retryTimes=0, alertFlag=NO, processInstance=null, processDefine=null, pid=0, appLink='null', flag=YES, dependency='null', duration=null, maxRetryTimes=0, retryInterval=1, taskInstancePriority=MEDIUM, processInstancePriority=MEDIUM, dependentResult='null', workerGroup='default', environmentCode=-1, environmentConfig='null', executorId=1, executorName='null', delayTime=0}
+[INFO] 2021-09-29 14:31:09.329 org.apache.dolphinscheduler.server.master.runner.task.CommonTaskProcessor:[128] - master submit success, task : hello
+[INFO] 2021-09-29 14:31:09.338 org.apache.dolphinscheduler.server.master.runner.WorkflowExecuteThread:[1132] - remove task from stand by list, id: 67724 name:hello
+[INFO] 2021-09-29 14:31:09.365 org.apache.dolphinscheduler.server.master.processor.TaskAckProcessor:[79] - taskAckCommand : TaskExecuteAckCommand{taskInstanceId=67724, startTime=Wed Sep 29 14:31:09 CST 2021, host='172.28.230.21:1234', status=1, logPath='/opt/program/apache-dolphinscheduler-2.0.0-SNAPSHOT-bin/logs/768951642152960_1/67698/67724.log', executePath='/tmp/dolphinscheduler/exec/process/765646222843904/768951642152960_1/67698/67724', processInstanceId='67698'}
+[INFO] 2021-09-29 14:31:09.384 org.apache.dolphinscheduler.server.master.processor.TaskResponseProcessor:[80] - received command : TaskExecuteResponseCommand{taskInstanceId=67724, status=7, endTime=Wed Sep 29 14:31:09 CST 2021, processId=977667, appIds=''}
+[INFO] 2021-09-29 14:31:10.288 org.apache.dolphinscheduler.server.master.runner.EventExecuteService:[125] - handle process instance : 67698 events, count:2
+[INFO] 2021-09-29 14:31:10.289 org.apache.dolphinscheduler.server.master.runner.EventExecuteService:[128] - already exists handler process size:0
+[INFO] 2021-09-29 14:31:10.289 org.apache.dolphinscheduler.server.master.runner.WorkflowExecuteThread:[291] - process event: State Event :key: null type: TASK_STATE_CHANGE executeStatus: RUNNING_EXECUTION task instance id: 67724 process instance id: 67698 context: null
+[INFO] 2021-09-29 14:31:10.293 org.apache.dolphinscheduler.server.master.runner.WorkflowExecuteThread:[291] - process event: State Event :key: null type: TASK_STATE_CHANGE executeStatus: SUCCESS task instance id: 67724 process instance id: 67698 context: null
+[INFO] 2021-09-29 14:31:10.296 org.apache.dolphinscheduler.server.master.runner.WorkflowExecuteThread:[369] - work flow 67698 task 67724 state:SUCCESS
+[INFO] 2021-09-29 14:31:10.309 org.apache.dolphinscheduler.server.master.runner.WorkflowExecuteThread:[1085] - work flow process instance [id: 67698, name:hello-1-20210929143109290], state change from RUNNING_EXECUTION to SUCCESS, cmd type: START_PROCESS
+[INFO] 2021-09-29 14:31:10.310 org.apache.dolphinscheduler.server.master.runner.MasterSchedulerService:[219] - find command page cost: 5
+[INFO] 2021-09-29 14:31:10.314 org.apache.dolphinscheduler.server.master.runner.WorkflowExecuteThread:[411] - process:67698 state SUCCESS change to SUCCESS
+[INFO] 2021-09-29 14:31:10.335 org.apache.dolphinscheduler.server.master.runner.EventExecuteService:[137] - process instance 67698 finished.
+[INFO] 2021-09-29 14:31:11.314 org.apache.dolphinscheduler.server.master.runner.MasterSchedulerService:[219] - find command page cost: 4
+[INFO] 2021-09-29 14:31:12.318 org.apache.dolphinscheduler.server.master.runner.MasterSchedulerService:[219] - find command page cost: 3
+
+
+
+[INFO] 2021-09-29 14:31:09.363 org.apache.dolphinscheduler.server.worker.processor.TaskExecuteProcessor:[119] - received command : TaskExecuteRequestCommand{taskExecutionContext='{"taskInstanceId":67724,"taskName":"hello","firstSubmitTime":"2021-09-29 14:31:09","startTime":null,"taskType":"SHELL","host":null,"executePath":null,"logPath":null,"taskJson":null,"processId":0,"processDefineCode":768951642152960,"processDefineVersion":1,"appIds":null,"processInstanceId":67698,"scheduleTime":null,"globalParams":null,"executorId":1,"cmdTypeIfComplement":0,"tenantCode":"root","queue":"default","projectCode":765646222843904,"taskParams":"{\"resourceList\":[],\"localParams\":[],\"rawScript\":\"echo \\\"hello\\\"\",\"dependence\":{},\"conditionResult\":{\"successNode\":[\"\"],\"failedNode\":[\"\"]},\"waitStartTimeout\":{}}","envFile":null,"environmentConfig":null,"definedParams":null,"taskAppId":null,"taskTimeoutStrategy":null,"taskTimeout":2147483647,"workerGroup":"default","delayTime":0,"currentExecutionStatus":null,"resources":{},"sqlTaskExecutionContext":{"warningGroupId":0,"connectionParams":null,"udfFuncTenantCodeMap":null},"dataxTaskExecutionContext":{"dataSourceId":0,"sourcetype":0,"sourceConnectionParams":null,"dataTargetId":0,"targetType":0,"targetConnectionParams":null},"dependenceTaskExecutionContext":null,"sqoopTaskExecutionContext":{"dataSourceId":0,"sourcetype":0,"sourceConnectionParams":null,"dataTargetId":0,"targetType":0,"targetConnectionParams":null},"varPool":null,"paramsMap":null,"procedureTaskExecutionContext":{"connectionParams":null}}'}
+[INFO] 2021-09-29 14:31:09.364 org.apache.dolphinscheduler.server.worker.processor.TaskExecuteProcessor:[142] - task instance local execute path : /tmp/dolphinscheduler/exec/process/765646222843904/768951642152960_1/67698/67724
+[INFO] 2021-09-29 14:31:09.364 org.apache.dolphinscheduler.common.utils.FileUtils:[145] - create dir success /tmp/dolphinscheduler/exec/process/765646222843904/768951642152960_1/67698/67724
+[INFO] 2021-09-29 14:31:09.364 org.apache.dolphinscheduler.server.worker.runner.TaskExecuteThread:[152] - script path : /tmp/dolphinscheduler/exec/process/765646222843904/768951642152960_1/67698/67724
+[INFO] 2021-09-29 14:31:09.364 org.apache.dolphinscheduler.server.worker.runner.TaskExecuteThread:[168] - the task begins to execute. task instance id: 67724
+[INFO] 2021-09-29 14:31:09.365  - [taskAppId=TASK-768951642152960_1-67698-67724]:[83] - shell task params {"resourceList":[],"localParams":[],"rawScript":"echo \"hello\"","dependence":{},"conditionResult":{"successNode":[""],"failedNode":[""]},"waitStartTimeout":{}}
+[INFO] 2021-09-29 14:31:09.367  - [taskAppId=TASK-768951642152960_1-67698-67724]:[137] - raw script : echo "hello"
+[INFO] 2021-09-29 14:31:09.367  - [taskAppId=TASK-768951642152960_1-67698-67724]:[138] - task execute path : /tmp/dolphinscheduler/exec/process/765646222843904/768951642152960_1/67698/67724
+[INFO] 2021-09-29 14:31:09.367  - [taskAppId=TASK-768951642152960_1-67698-67724]:[86] - tenantCode user:root, task dir:67698_67724
+[INFO] 2021-09-29 14:31:09.367  - [taskAppId=TASK-768951642152960_1-67698-67724]:[91] - create command file:/tmp/dolphinscheduler/exec/process/765646222843904/768951642152960_1/67698/67724/67698_67724.command
+[INFO] 2021-09-29 14:31:09.367  - [taskAppId=TASK-768951642152960_1-67698-67724]:[110] - command : #!/bin/sh
+BASEDIR=$(cd `dirname $0`; pwd)
+cd $BASEDIR
+source /opt/program/apache-dolphinscheduler-2.0.0-SNAPSHOT-bin/conf/env/dolphinscheduler_env.sh
+/tmp/dolphinscheduler/exec/process/765646222843904/768951642152960_1/67698/67724/67698_67724_node.sh
+[INFO] 2021-09-29 14:31:09.369  - [taskAppId=TASK-768951642152960_1-67698-67724]:[285] - task run command: sudo -u root sh /tmp/dolphinscheduler/exec/process/765646222843904/768951642152960_1/67698/67724/67698_67724.command
+[INFO] 2021-09-29 14:31:09.369  - [taskAppId=TASK-768951642152960_1-67698-67724]:[176] - process start, process id is: 977667
+[INFO] 2021-09-29 14:31:09.383  - [taskAppId=TASK-768951642152960_1-67698-67724]:[200] - process has exited, execute path:/tmp/dolphinscheduler/exec/process/765646222843904/768951642152960_1/67698/67724, processId:977667 ,exitStatusCode:0 ,processWaitForStatus:true ,processExitValue:0
+[INFO] 2021-09-29 14:31:09.383 org.apache.dolphinscheduler.server.worker.runner.TaskExecuteThread:[213] - task instance id : 67724,task final status : SUCCESS
+[INFO] 2021-09-29 14:31:09.383 org.apache.dolphinscheduler.server.worker.runner.TaskExecuteThread:[238] - develop mode is: false
+[INFO] 2021-09-29 14:31:09.383 org.apache.dolphinscheduler.server.worker.runner.TaskExecuteThread:[256] - exec local path: /tmp/dolphinscheduler/exec/process/765646222843904/768951642152960_1/67698/67724 cleared.
+[INFO] 2021-09-29 14:31:10.370  - [taskAppId=TASK-768951642152960_1-67698-67724]:[61] -  -> welcome to use bigdata scheduling system...
+        hello
+[INFO] 2021-09-29 14:31:10.371  - [taskAppId=TASK-768951642152960_1-67698-67724]:[55] - FINALIZE_SESSION
