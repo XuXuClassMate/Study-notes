@@ -1,41 +1,42 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""Sort log lines and annotate delta milliseconds between neighbors."""
 import datetime
+import os
 
-filename="test.txt"
-content = []
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+filename = os.path.join(SCRIPT_DIR, "test.txt")
+output = os.path.join(SCRIPT_DIR, "result.log")
 
 
-def getTimeSecs(preLine, nextLine):
-
+def get_time_ms(pre_line, next_line):
     try:
-        index = preLine.index('] ')
-        nextIndex = nextLine.index('] ')
-        preTime = datetime.datetime.strptime(preLine[index +2: index+ 25], '%Y-%m-%d %H:%M:%S.%f')
-        nextTime = datetime.datetime.strptime(nextLine[nextIndex +2: nextIndex+ 25], '%Y-%m-%d %H:%M:%S.%f')
-        return (nextTime - preTime).microseconds / 1000;
-    except Exception,e:
-        print e
+        index = pre_line.index("] ")
+        next_index = next_line.index("] ")
+        pre_time = datetime.datetime.strptime(
+            pre_line[index + 2 : index + 25], "%Y-%m-%d %H:%M:%S.%f"
+        )
+        next_time = datetime.datetime.strptime(
+            next_line[next_index + 2 : next_index + 25], "%Y-%m-%d %H:%M:%S.%f"
+        )
+        return int((next_time - pre_time).total_seconds() * 1000)
+    except (ValueError, IndexError) as exc:
+        print(exc)
         return 0
 
 
-with open(filename, 'r') as fo:
-    for line in fo.readlines():
+content = []
+with open(filename, "r", encoding="utf-8") as fo:
+    for line in fo:
         content.append(line.strip())
 
+content.sort()
 
-content.sort();
-
-output="result.log"
-with open(output, 'w+') as wo:
-    preLine = ''
+with open(output, "w+", encoding="utf-8", newline="\n") as wo:
+    pre_line = ""
     for line in content:
-        if preLine =='':
-            preLine = line
-        line = "["+ str(getTimeSecs(preLine, line))+"]"+line + '\n\r'
-        wo.writelines(line)
-        preLine = line
-
-
-
-
-
+        if not pre_line:
+            pre_line = line
+        annotated = "[{}]{}\n".format(get_time_ms(pre_line, line), line)
+        wo.write(annotated)
+        pre_line = line

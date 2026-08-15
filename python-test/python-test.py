@@ -1,53 +1,36 @@
-# -*- coding:utf-8 -*-
-
+# -*- coding: utf-8 -*-
+"""Simple file read demo for local study notes."""
 import os
 
-
-'''
-这是个测试程序
-'''
-
-
-print 'hello world'
+print("hello world")
 
 
 def testprint():
-    print '=====main start'
-    print 'main'
-    print '=====main end'
+    print("=====main start")
+    print("main")
+    print("=====main end")
 
 
 def test():
-    today='20210531'
-    print today
-    print today+"_test"
+    today = "20210531"
+    print(today)
+    print(today + "_test")
 
-def getFilePath():
-    return '/Users/apple/Documents/study/python/python-test/test.txt'
 
-def readFile(filePath):
-    f = open(filePath)
-    s = 1
-    for line in f.readlines():
-        print line
-    f.close()
-    return s
+def get_file_path():
+    return os.path.join(os.path.dirname(os.path.abspath(__file__)), "test.txt")
 
-def Hello():
-    file = getFilePath()
-    readFile(file)
+
+def read_file(file_path):
+    with open(file_path, encoding="utf-8") as handle:
+        for line in handle:
+            print(line.rstrip("\n"))
+    return 1
+
+
+def hello():
+    read_file(get_file_path())
 
 
 if __name__ == "__main__":
-    Hello()
-
-
-
-
-
-
-
-
-
-
-
+    hello()
