@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="420" viewBox="0 0 1200 420" role="img" aria-label="Hotfix dual track">
+  <rect width="1200" height="420" rx="28" fill="#0b1220"/>
+  <text x="48" y="48" fill="#f3f6fb" font-family="PingFang SC, Hiragino Sans GB, Helvetica Neue, Arial, sans-serif" font-size="22" font-weight="700">Hotfix / dual track</text>
+  <text x="48" y="72" fill="#8492a8" font-family="PingFang SC, Hiragino Sans GB, Helvetica Neue, Arial, sans-serif" font-size="12" font-weight="500">现场先活下来，主干稍后对齐</text>
+
+  <rect x="48" y="110" width="160" height="56" rx="28" fill="#ff6b6b"/>
+  <text x="128" y="144" text-anchor="middle" fill="#1a0f12" font-family="PingFang SC, Hiragino Sans GB, Helvetica Neue, Arial, sans-serif" font-size="15" font-weight="700">Critical</text>
+
+  <path d="M208 138 H280 V190 H320 M280 138 V300 H320" stroke="#44536b" stroke-width="2" fill="none"/>
+
+  <text x="320" y="168" fill="#ffb347" font-family="PingFang SC, Hiragino Sans GB, Helvetica Neue, Arial, sans-serif" font-size="12" font-weight="700" letter-spacing="1.2">HOTFIX LINE</text>
+  <rect x="320" y="178" width="780" height="72" rx="20" fill="#1a1510" stroke="#6a4a28"/>
+  <text x="348" y="210" fill="#f2f5fa" font-family="PingFang SC, Hiragino Sans GB, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="600">Branch_2.6.xxx -&gt; 修 -&gt; ChangeNotes -&gt; Jar 到客户现场</text>
+  <text x="348" y="232" fill="#90a0b7" font-family="PingFang SC, Hiragino Sans GB, Helvetica Neue, Arial, sans-serif" font-size="12" font-weight="500">先止血，不等完整发版火车</text>
+
+  <text x="320" y="278" fill="#3ef0c8" font-family="PingFang SC, Hiragino Sans GB, Helvetica Neue, Arial, sans-serif" font-size="12" font-weight="700" letter-spacing="1.2">BACKPORT LINE</text>
+  <rect x="320" y="288" width="780" height="72" rx="20" fill="#101a1a" stroke="#2a5550"/>
+  <text x="348" y="320" fill="#f2f5fa" font-family="PingFang SC, Hiragino Sans GB, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="600">同步 2.6-test -&gt; Emergency 流程 -&gt; 正式 Release</text>
+  <text x="348" y="342" fill="#90a0b7" font-family="PingFang SC, Hiragino Sans GB, Helvetica Neue, Arial, sans-serif" font-size="12" font-weight="500">现场包不能成为唯一真相</text>
+</svg>

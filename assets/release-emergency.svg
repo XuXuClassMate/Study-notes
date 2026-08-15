@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="300" viewBox="0 0 1200 300" role="img" aria-label="Emergency release flow">
+  <defs>
+    <linearGradient id="card2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#21161a"/>
+      <stop offset="100%" stop-color="#161018"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="300" rx="28" fill="#120d10"/>
+  <text x="48" y="48" fill="#f3f6fb" font-family="PingFang SC, Hiragino Sans GB, Helvetica Neue, Arial, sans-serif" font-size="22" font-weight="700">Emergency</text>
+  <text x="48" y="72" fill="#8492a8" font-family="PingFang SC, Hiragino Sans GB, Helvetica Neue, Arial, sans-serif" font-size="12" font-weight="500">Critical in / fix out / keep the lights on</text>
+
+  <g font-family="PingFang SC, Hiragino Sans GB, Helvetica Neue, Arial, sans-serif">
+    <g transform="translate(48 110)">
+      <rect width="200" height="70" rx="18" fill="url(#card2)" stroke="#5a3038"/>
+      <circle cx="26" cy="35" r="11" fill="#ff6b6b"/><text x="26" y="39" text-anchor="middle" fill="#1a0f12" font-size="11" font-weight="700">1</text>
+      <text x="48" y="40" fill="#f4ecee" font-size="13" font-weight="600">Critical 进线</text>
+    </g>
+    <g transform="translate(272 110)">
+      <rect width="200" height="70" rx="18" fill="url(#card2)" stroke="#5a3038"/>
+      <circle cx="26" cy="35" r="11" fill="#ff6b6b"/><text x="26" y="39" text-anchor="middle" fill="#1a0f12" font-size="11" font-weight="700">2</text>
+      <text x="48" y="40" fill="#f4ecee" font-size="13" font-weight="600">临时止血</text>
+    </g>
+    <g transform="translate(496 110)">
+      <rect width="200" height="70" rx="18" fill="url(#card2)" stroke="#5a3038"/>
+      <circle cx="26" cy="35" r="11" fill="#ffb347"/><text x="26" y="39" text-anchor="middle" fill="#1a0f12" font-size="11" font-weight="700">3</text>
+      <text x="48" y="40" fill="#f4ecee" font-size="13" font-weight="600">Jira 修复</text>
+    </g>
+    <g transform="translate(720 110)">
+      <rect width="200" height="70" rx="18" fill="url(#card2)" stroke="#5a3038"/>
+      <circle cx="26" cy="35" r="11" fill="#ffb347"/><text x="26" y="39" text-anchor="middle" fill="#1a0f12" font-size="11" font-weight="700">4</text>
+      <text x="48" y="40" fill="#f4ecee" font-size="13" font-weight="600">PR to 2.6-test</text>
+    </g>
+    <g transform="translate(944 110)">
+      <rect width="208" height="70" rx="18" fill="url(#card2)" stroke="#5a3038"/>
+      <circle cx="26" cy="35" r="11" fill="#ffb347"/><text x="26" y="39" text-anchor="middle" fill="#1a0f12" font-size="11" font-weight="700">5</text>
+      <text x="48" y="40" fill="#f4ecee" font-size="13" font-weight="600">test 验证</text>
+    </g>
+
+    <g transform="translate(48 200)">
+      <rect width="200" height="70" rx="18" fill="url(#card2)" stroke="#5a3038"/>
+      <circle cx="26" cy="35" r="11" fill="#3ef0c8"/><text x="26" y="39" text-anchor="middle" fill="#1a0f12" font-size="11" font-weight="700">6</text>
+      <text x="48" y="40" fill="#f4ecee" font-size="13" font-weight="600">合 release</text>
+    </g>
+    <g transform="translate(272 200)">
+      <rect width="200" height="70" rx="18" fill="url(#card2)" stroke="#5a3038"/>
+      <circle cx="26" cy="35" r="11" fill="#3ef0c8"/><text x="26" y="39" text-anchor="middle" fill="#1a0f12" font-size="11" font-weight="700">7</text>
+      <text x="48" y="40" fill="#f4ecee" font-size="13" font-weight="600">release 再验</text>
+    </g>
+    <g transform="translate(496 200)">
+      <rect width="200" height="70" rx="18" fill="#24181c" stroke="#ff6b6b" stroke-opacity="0.7"/>
+      <circle cx="26" cy="35" r="11" fill="#ff6b6b"/><text x="26" y="39" text-anchor="middle" fill="#1a0f12" font-size="11" font-weight="700">8</text>
+      <text x="48" y="40" fill="#f4ecee" font-size="13" font-weight="600">Bug-fix 发布</text>
+    </g>
+    <g transform="translate(720 200)">
+      <rect width="200" height="70" rx="18" fill="url(#card2)" stroke="#5a3038"/>
+      <circle cx="26" cy="35" r="11" fill="#d7ff3f"/><text x="26" y="39" text-anchor="middle" fill="#1a0f12" font-size="11" font-weight="700">9</text>
+      <text x="48" y="40" fill="#f4ecee" font-size="13" font-weight="600">版本 + commit</text>
+    </g>
+    <g transform="translate(944 200)">
+      <rect width="208" height="70" rx="18" fill="url(#card2)" stroke="#5a3038"/>
+      <circle cx="26" cy="35" r="11" fill="#d7ff3f"/><text x="26" y="39" text-anchor="middle" fill="#1a0f12" font-size="11" font-weight="700">10</text>
+      <text x="48" y="40" fill="#f4ecee" font-size="13" font-weight="600">全员通知</text>
+    </g>
+  </g>
+
+  <path d="M248 145 H272 M472 145 H496 M696 145 H720 M920 145 H944" stroke="#6a4450" stroke-width="2"/>
+  <path d="M248 235 H272 M472 235 H496 M696 235 H720 M920 235 H944" stroke="#6a4450" stroke-width="2"/>
+  <path d="M1048 180 V200" stroke="#6a4450" stroke-width="2"/>
+</svg>
